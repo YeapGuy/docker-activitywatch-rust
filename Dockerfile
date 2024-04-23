@@ -18,8 +18,10 @@ RUN apt-get -qq -y update \
   && unzip ./activitywatch*.zip \
   && rm ./activitywatch*.zip \
   && chmod +x ./activitywatch/aw-server-rust/aw-server-rust \
+  && chmod +x ./activitywatch/aw-server-rust/aw-sync \
   && apt-get purge -qq -y --auto-remove ca-certificates unzip wget
 
+COPY wrapper-script.sh wrapper-script.sh
 EXPOSE 5600
 SHELL ["/bin/bash", "-c"]
-CMD ["/app/activitywatch/aw-server-rust/aw-server-rust", "--host", "0.0.0.0", "--no-legacy-import"]
+CMD ["/app/wrapper-script.sh"]
