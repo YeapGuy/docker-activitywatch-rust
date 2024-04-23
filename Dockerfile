@@ -22,6 +22,7 @@ RUN apt-get -qq -y update \
   && apt-get purge -qq -y --auto-remove ca-certificates unzip wget
 
 COPY wrapper-script.sh wrapper-script.sh
+RUN chmod +x ./wrapper-script.sh
 EXPOSE 5600
 SHELL ["/bin/bash", "-c"]
 CMD ["/app/wrapper-script.sh"]
