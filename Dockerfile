@@ -1,7 +1,7 @@
 FROM debian:bullseye-slim
 
-LABEL maintainer="Kerem Bozdas <krmbzds.github@gmail.com>"
-LABEL repository="https://github.com/krmbzds/docker-activitywatch"
+LABEL maintainer="YeapGuy <yeapguy@tailmail.eu>"
+LABEL repository="https://github.com/YeapGuy/docker-activitywatch-rust"
 
 RUN mkdir /app
 WORKDIR /app
