@@ -17,9 +17,9 @@ RUN apt-get -qq -y update \
   | wget -q -i - \
   && unzip ./activitywatch*.zip \
   && rm ./activitywatch*.zip \
-  && chmod +x ./activitywatch/aw-server/aw-server \
+  && chmod +x ./activitywatch/aw-server-rust/aw-server-rust \
   && apt-get purge -qq -y --auto-remove ca-certificates unzip wget
 
 EXPOSE 5600
 SHELL ["/bin/bash", "-c"]
-CMD ["/app/activitywatch/aw-server/aw-server", "--host", "0.0.0.0"]
+CMD ["/app/activitywatch/aw-server-rust/aw-server-rust", "--host", "0.0.0.0", "--no-legacy-import"]
